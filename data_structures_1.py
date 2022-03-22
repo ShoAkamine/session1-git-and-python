@@ -9,7 +9,7 @@ participant_2_RTs = [287, 750, 411, 410, 351, 1040, 1124, 891, 924, 664]
 participant_3_RTs = [342, 1063, 131, 485, 480, 159, 60, 389, 375, 653]
 
 # Compare the RTs on the 4th trial (index 3)
-#print(participant_1_RTs[3], participant_2_RTs[3], participant_3_RTs[3])
+print(participant_1_RTs[3], participant_2_RTs[3], participant_3_RTs[3])
 
 # Maybe a list of lists is slightly cleaner?
 #   Second (inner) index >  
@@ -21,11 +21,11 @@ participants = [
 ]
 
 # Getting a single value, e.g. RT of 4th trial from 2nd participant
-#print(participants[1][3])
+print(participants[1][3])
 
 # Comparing all of them is cleaner, but still slightly cumbersome
-#for participant in participants:
-#    print(participant[3])
+for participant in participants:
+    print(participant[3])
 
 # There are also arrays, provided by the numpy package!
 # So what's the difference between a list and an array?
@@ -36,14 +36,14 @@ participants = [
 import numpy as np  # noqa: E402
 
 participants_array = np.array(participants)  # Convert our list of lists to an array
-#print(participants_array[:, 3])  # It's so simple now to compare reaction times!
-#print(participants_array[1, :])  # Or to get all RTs from a single participant.
+print(participants_array[:, 3])  # It's so simple now to compare reaction times!
+print(participants_array[1, :])  # Or to get all RTs from a single participant.
 
 # What about participant RT means and stdevs?
-#print(participants_array.mean(axis=1), participants_array.std(axis=1))
+print(participants_array.mean(axis=1), participants_array.std(axis=1))
 
 # ... or trial RT means?
-#print(participants_array.mean(axis=0))
+print(participants_array.mean(axis=0))
 
 # Homework exercise:
 #   1) Import the log function from the math package (built-in)
@@ -55,6 +55,7 @@ participants_array = np.array(participants)  # Convert our list of lists to an a
 from math import log
 
 # Calculate log-RTs using the three separate RT lists
+print('\nBelow you can find the output for the exercises')
 print('\nExercise 1')
 
 log_RTs_ex1 = []
@@ -88,7 +89,7 @@ for list in participants:
     for RT in list:
         log_RTs_temp.append(log(RT))
     log_RTs_ex2.append(log_RTs_temp)
-    
+
 print(log_RTs_ex2)
 
 
